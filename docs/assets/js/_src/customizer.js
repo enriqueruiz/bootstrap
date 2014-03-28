@@ -155,7 +155,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
     complete(content)
   }
 
-  function generateCustomCSS(vars) {
+  function generateCustomLess(vars) {
     var result = ''
 
     for (var key in vars) {
@@ -200,7 +200,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
       // Custom variables are added after Bootstrap variables so the custom
       // ones take precedence.
-      if (('variables.less' === filename) && vars) lessSource += generateCustomCSS(vars)
+      if (('variables.less' === filename) && vars) lessSource += generateCustomLess(vars)
     })
 
     lessSource = lessSource.replace(/@import[^\n]*/gi, '') //strip any imports
